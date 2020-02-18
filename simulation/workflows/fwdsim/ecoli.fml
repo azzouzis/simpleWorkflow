@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fluxml xmlns="http://www.13cflux.net/fluxml">
+  <info>
+    <name>K12_MG1655.ftbl</name>
+    <version>1</version>
+    <date>2018-07-20 13:32:20</date>
+    <comment>modele E coli K12 MG1655 WT avec voies centrales completes et voies biomasse simplifiees</comment>
+  </info>
+  <reactionnetwork>
+    <metabolitepools>
+      <pool atoms="5" id="AKG"/>
+      <pool atoms="5" id="AKV"/>
+      <pool atoms="2" id="AcCoA"/>
+      <pool atoms="3" id="Ala"/>
+      <pool atoms="6" id="Arg"/>
+      <pool atoms="4" id="Asn"/>
+      <pool atoms="4" id="Asp"/>
+      <pool atoms="5" id="BM_AKG"/>
+      <pool atoms="2" id="BM_AcCoA"/>
+      <pool atoms="4" id="BM_Ery4P"/>
+      <pool atoms="4" id="BM_OAA"/>
+      <pool atoms="3" id="BM_PEP"/>
+      <pool atoms="3" id="BM_PGA"/>
+      <pool atoms="3" id="BM_Pyr"/>
+      <pool atoms="5" id="BM_Rib5P"/>
+      <pool atoms="1" id="CO2"/>
+      <pool atoms="10" id="Chor"/>
+      <pool atoms="3" id="Cys"/>
+      <pool atoms="7" id="DAHP"/>
+      <pool atoms="4" id="Ery4P"/>
+      <pool atoms="1" id="FTHF"/>
+      <pool atoms="6" id="Fru6P"/>
+      <pool atoms="6" id="FruBP"/>
+      <pool atoms="3" id="GA3P"/>
+      <pool atoms="6" id="Glc6P"/>
+      <pool atoms="5" id="Glu"/>
+      <pool atoms="6" id="Gluc_1"/>
+      <pool atoms="6" id="Gluc_U"/>
+      <pool atoms="2" id="Gly"/>
+      <pool atoms="6" id="Gnt6P"/>
+      <pool atoms="6" id="His"/>
+      <pool atoms="6" id="ICit"/>
+      <pool atoms="6" id="Ile"/>
+      <pool atoms="6" id="Leu"/>
+      <pool atoms="6" id="Lys"/>
+      <pool atoms="4" id="Mal"/>
+      <pool atoms="5" id="Met"/>
+      <pool atoms="4" id="OAA"/>
+      <pool atoms="3" id="PEP"/>
+      <pool atoms="3" id="PGA"/>
+      <pool atoms="9" id="Phe"/>
+      <pool atoms="3" id="Pyr"/>
+      <pool atoms="4" id="PyrCO2"/>
+      <pool atoms="5" id="Rib5P"/>
+      <pool atoms="7" id="Sed7P"/>
+      <pool atoms="3" id="Ser"/>
+      <pool atoms="4" id="Suc"/>
+      <pool atoms="4" id="Thr"/>
+      <pool atoms="11" id="Trp"/>
+      <pool atoms="9" id="Tyr"/>
+      <pool atoms="5" id="Val"/>
+    </metabolitepools>
+    <reaction id="Glucupt_1">
+      <reduct cfg="ABCDEF" id="Gluc_1"/>
+      <rproduct cfg="ABCDEF" id="Glc6P"/>
+    </reaction>
+    <reaction id="Glucupt_U">
+      <reduct cfg="ABCDEF" id="Gluc_U"/>
+      <rproduct cfg="ABCDEF" id="Glc6P"/>
+    </reaction>
+    <reaction id="pgi">
+      <reduct cfg="ABCDEF" id="Glc6P"/>
+      <rproduct cfg="ABCDEF" id="Fru6P"/>
+    </reaction>
+    <reaction id="pfk">
+      <reduct cfg="ABCDEF" id="Fru6P"/>
+      <rproduct cfg="ABCDEF" id="FruBP"/>
+    </reaction>
+    <reaction id="ald">
+      <reduct cfg="ABCDEF" id="FruBP"/>
+      <rproduct cfg="CBA" id="GA3P"/>
+      <rproduct cfg="DEF" id="GA3P"/>
+    </reaction>
+    <reaction id="pgk">
+      <reduct cfg="ABC" id="GA3P"/>
+      <rproduct cfg="ABC" id="PGA"/>
+    </reaction>
+    <reaction id="eno">
+      <reduct cfg="ABC" id="PGA"/>
+      <rproduct cfg="ABC" id="PEP"/>
+    </reaction>
+    <reaction id="pyk">
+      <reduct cfg="ABC" id="PEP"/>
+      <rproduct cfg="ABC" id="Pyr"/>
+    </reaction>
+    <reaction id="zwf">
+      <reduct cfg="ABCDEF" id="Glc6P"/>
+      <rproduct cfg="ABCDEF" id="Gnt6P"/>
+    </reaction>
+    <reaction id="gnd">
+      <reduct cfg="ABCDEF" id="Gnt6P"/>
+      <rproduct cfg="A" id="CO2"/>
+      <rproduct cfg="BCDEF" id="Rib5P"/>
+    </reaction>
+    <reaction id="edd">
+      <reduct cfg="ABCDEF" id="Gnt6P"/>
+      <rproduct cfg="ABC" id="Pyr"/>
+      <rproduct cfg="DEF" id="GA3P"/>
+    </reaction>
+    <reaction id="ta">
+      <reduct cfg="ABC" id="GA3P"/>
+      <reduct cfg="abcdefg" id="Sed7P"/>
+      <rproduct cfg="defg" id="Ery4P"/>
+      <rproduct cfg="abcABC" id="Fru6P"/>
+    </reaction>
+    <reaction id="tk1">
+      <reduct cfg="ABCDE" id="Rib5P"/>
+      <reduct cfg="abcde" id="Rib5P"/>
+      <rproduct cfg="CDE" id="GA3P"/>
+      <rproduct cfg="ABabcde" id="Sed7P"/>
+    </reaction>
+    <reaction id="tk2">
+      <reduct cfg="ABCDE" id="Rib5P"/>
+      <reduct cfg="abcd" id="Ery4P"/>
+      <rproduct cfg="CDE" id="GA3P"/>
+      <rproduct cfg="ABabcd" id="Fru6P"/>
+    </reaction>
+    <reaction id="pdh">
+      <reduct cfg="ABC" id="Pyr"/>
+      <rproduct cfg="BC" id="AcCoA"/>
+      <rproduct cfg="A" id="CO2"/>
+    </reaction>
+    <reaction id="citsynth">
+      <reduct cfg="AB" id="AcCoA"/>
+      <reduct cfg="abcd" id="OAA"/>
+      <rproduct cfg="dcbaBA" id="ICit"/>
+    </reaction>
+    <reaction id="idh">
+      <reduct cfg="ABCDEF" id="ICit"/>
+      <rproduct cfg="ABCEF" id="AKG"/>
+      <rproduct cfg="D" id="CO2"/>
+    </reaction>
+    <reaction id="akgdh">
+      <reduct cfg="ABCDE" id="AKG"/>
+      <rproduct cfg="BCDE" id="Suc"/>
+      <rproduct cfg="A" id="CO2"/>
+    </reaction>
+    <reaction id="fum_a">
+      <reduct cfg="ABCD" id="Suc"/>
+      <rproduct cfg="ABCD" id="Mal"/>
+    </reaction>
+    <reaction id="fum_b">
+      <reduct cfg="ABCD" id="Suc"/>
+      <rproduct cfg="DCBA" id="Mal"/>
+    </reaction>
+    <reaction id="maldh">
+      <reduct cfg="ABCD" id="Mal"/>
+      <rproduct cfg="ABCD" id="OAA"/>
+    </reaction>
+    <reaction id="ppc">
+      <reduct cfg="ABC" id="PEP"/>
+      <reduct cfg="a" id="CO2"/>
+      <rproduct cfg="ABCa" id="OAA"/>
+    </reaction>
+    <reaction id="mae">
+      <reduct cfg="ABCD" id="Mal"/>
+      <rproduct cfg="ABC" id="Pyr"/>
+      <rproduct cfg="D" id="CO2"/>
+    </reaction>
+    <reaction id="bs_glc6P">
+      <reduct cfg="ABCDEF" id="Glc6P"/>
+    </reaction>
+    <reaction id="bs_fru6P">
+      <reduct cfg="ABCDEF" id="Fru6P"/>
+    </reaction>
+    <reaction id="bs_pga">
+      <reduct cfg="ABC" id="PGA"/>
+      <rproduct cfg="ABC" id="BM_PGA"/>
+    </reaction>
+    <reaction id="bs_pga_aux">
+      <reduct cfg="ABC" id="BM_PGA"/>
+    </reaction>
+    <reaction id="bs_pga1">
+      <reduct cfg="ABC" id="BM_PGA"/>
+      <rproduct cfg="ABC" id="Ser"/>
+    </reaction>
+    <reaction id="bs_pga1_aux">
+      <reduct cfg="ABC" id="Ser"/>
+    </reaction>
+    <reaction id="bs_pga2">
+      <reduct cfg="ABC" id="Ser"/>
+      <rproduct cfg="ABC" id="Cys"/>
+    </reaction>
+    <reaction id="bs_pga2_aux">
+      <reduct cfg="ABC" id="Cys"/>
+    </reaction>
+    <reaction id="bs_pga3">
+      <reduct cfg="ABC" id="Ser"/>
+      <rproduct cfg="AB" id="Gly"/>
+      <rproduct cfg="C" id="FTHF"/>
+    </reaction>
+    <reaction id="bs_pga3_aux">
+      <reduct cfg="AB" id="Gly"/>
+    </reaction>
+    <reaction id="bs_DHAP">
+      <reduct cfg="ABC" id="GA3P"/>
+    </reaction>
+    <reaction id="bs_pyr">
+      <reduct cfg="ABC" id="Pyr"/>
+      <rproduct cfg="ABC" id="BM_Pyr"/>
+    </reaction>
+    <reaction id="bs_pyr1">
+      <reduct cfg="ABC" id="BM_Pyr"/>
+      <rproduct cfg="ABC" id="Ala"/>
+    </reaction>
+    <reaction id="bs_pyr1_aux">
+      <reduct cfg="ABC" id="Ala"/>
+    </reaction>
+    <reaction id="bs_pyr2">
+      <reduct cfg="ABC" id="BM_Pyr"/>
+      <reduct cfg="abc" id="BM_Pyr"/>
+      <rproduct cfg="ABbcC" id="AKV"/>
+      <rproduct cfg="a" id="CO2"/>
+    </reaction>
+    <reaction id="bs_pyr4">
+      <reduct cfg="ABCDE" id="AKV"/>
+      <rproduct cfg="ABCDE" id="Val"/>
+    </reaction>
+    <reaction id="bs_pyr4_aux">
+      <reduct cfg="ABCDE" id="Val"/>
+    </reaction>
+    <reaction id="bs_pyr3">
+      <reduct cfg="ABCDE" id="AKV"/>
+      <reduct cfg="ab" id="BM_AcCoA"/>
+      <rproduct cfg="abBCDE" id="Leu"/>
+      <rproduct cfg="A" id="CO2"/>
+    </reaction>
+    <reaction id="bs_pyr3_aux">
+      <reduct cfg="ABCDEF" id="Leu"/>
+    </reaction>
+    <reaction id="bs_e4p">
+      <reduct cfg="ABCD" id="Ery4P"/>
+      <rproduct cfg="ABCD" id="BM_Ery4P"/>
+    </reaction>
+    <reaction id="bs_rib5p">
+      <reduct cfg="ABCDE" id="Rib5P"/>
+      <rproduct cfg="ABCDE" id="BM_Rib5P"/>
+    </reaction>
+    <reaction id="bs_rib5p1">
+      <reduct cfg="ABCDE" id="BM_Rib5P"/>
+      <reduct cfg="a" id="FTHF"/>
+      <rproduct cfg="EDCBAa" id="His"/>
+    </reaction>
+    <reaction id="bs_rib5p1_aux">
+      <reduct cfg="ABCDEF" id="His"/>
+    </reaction>
+    <reaction id="bs_rib5p2">
+      <reduct cfg="ABCDE" id="BM_Rib5P"/>
+    </reaction>
+    <reaction id="bs_pep">
+      <reduct cfg="ABC" id="PEP"/>
+      <rproduct cfg="ABC" id="BM_PEP"/>
+    </reaction>
+    <reaction id="bs_pep1">
+      <reduct cfg="ABC" id="BM_PEP"/>
+      <reduct cfg="abcd" id="BM_Ery4P"/>
+      <rproduct cfg="ABCabcd" id="DAHP"/>
+    </reaction>
+    <reaction id="bs_pep2">
+      <reduct cfg="ABC" id="BM_PEP"/>
+      <reduct cfg="abcdefg" id="DAHP"/>
+      <rproduct cfg="ABCabcdefg" id="Chor"/>
+    </reaction>
+    <reaction id="bs_pep3a">
+      <reduct cfg="ABCDEFGHIJ" id="Chor"/>
+      <rproduct cfg="ABCEFGHIJ" id="Phe"/>
+      <rproduct cfg="D" id="CO2"/>
+    </reaction>
+    <reaction id="bs_pep3b">
+      <reduct cfg="ABCDEFGHIJ" id="Chor"/>
+      <rproduct cfg="ABCEJIHGF" id="Phe"/>
+      <rproduct cfg="D" id="CO2"/>
+    </reaction>
+    <reaction id="bs_pep3_aux">
+      <reduct cfg="ABCEFGHIJ" id="Phe"/>
+    </reaction>
+    <reaction id="bs_pep4a">
+      <reduct cfg="ABCDEFGHIJ" id="Chor"/>
+      <rproduct cfg="ABCEFGHIJ" id="Tyr"/>
+      <rproduct cfg="D" id="CO2"/>
+    </reaction>
+    <reaction id="bs_pep4b">
+      <reduct cfg="ABCDEFGHIJ" id="Chor"/>
+      <rproduct cfg="ABCEJIHGF" id="Tyr"/>
+      <rproduct cfg="D" id="CO2"/>
+    </reaction>
+    <reaction id="bs_pep4_aux">
+      <reduct cfg="ABCEFGHIJ" id="Tyr"/>
+    </reaction>
+    <reaction id="bs_pep5">
+      <reduct cfg="ABC" id="BM_PEP"/>
+    </reaction>
+    <reaction id="bs_pep6">
+      <reduct cfg="ABCDEFGHIJ" id="Chor"/>
+      <reduct cfg="abcde" id="BM_Rib5P"/>
+      <rproduct cfg="edcbaJEFGHI" id="Trp"/>
+      <rproduct cfg="ABCD" id="PyrCO2"/>
+    </reaction>
+    <reaction id="bs_pep6_aux">
+      <reduct cfg="ABCDEFGHIJK" id="Trp"/>
+    </reaction>
+    <reaction id="bs_pep7">
+      <reduct cfg="ABCD" id="PyrCO2"/>
+      <rproduct cfg="ABC" id="Pyr"/>
+      <rproduct cfg="D" id="CO2"/>
+    </reaction>
+    <reaction id="bs_accoa">
+      <reduct cfg="AB" id="AcCoA"/>
+      <rproduct cfg="AB" id="BM_AcCoA"/>
+    </reaction>
+    <reaction id="bs_accoa_aux">
+      <reduct cfg="AB" id="BM_AcCoA"/>
+    </reaction>
+    <reaction id="bs_akg">
+      <reduct cfg="ABCDE" id="AKG"/>
+      <rproduct cfg="ABCDE" id="BM_AKG"/>
+    </reaction>
+    <reaction id="bs_akg1">
+      <reduct cfg="ABCDE" id="BM_AKG"/>
+      <rproduct cfg="ABCDE" id="Glu"/>
+    </reaction>
+    <reaction id="bs_akg2">
+      <reduct cfg="ABCDE" id="Glu"/>
+    </reaction>
+    <reaction id="bs_akg3">
+      <reduct cfg="ABCDE" id="Glu"/>
+    </reaction>
+    <reaction id="bs_akg4">
+      <reduct cfg="ABCDE" id="Glu"/>
+      <reduct cfg="a" id="CO2"/>
+      <rproduct cfg="ABCDEa" id="Arg"/>
+    </reaction>
+    <reaction id="bs_akg4_aux">
+      <reduct cfg="ABCDEF" id="Arg"/>
+    </reaction>
+    <reaction id="bs_oaa">
+      <reduct cfg="ABCD" id="OAA"/>
+      <rproduct cfg="ABCD" id="BM_OAA"/>
+    </reaction>
+    <reaction id="bs_oaa1">
+      <reduct cfg="ABCD" id="BM_OAA"/>
+      <rproduct cfg="ABCD" id="Asp"/>
+    </reaction>
+    <reaction id="bs_oaa1_aux">
+      <reduct cfg="ABCD" id="Asp"/>
+    </reaction>
+    <reaction id="bs_oaa2">
+      <reduct cfg="ABCD" id="Thr"/>
+      <reduct cfg="abc" id="BM_Pyr"/>
+      <rproduct cfg="ABbCDc" id="Ile"/>
+      <rproduct cfg="a" id="CO2"/>
+    </reaction>
+    <reaction id="bs_oaa2_aux">
+      <reduct cfg="ABCDEF" id="Ile"/>
+    </reaction>
+    <reaction id="bs_oaa3a">
+      <reduct cfg="ABCD" id="BM_OAA"/>
+      <reduct cfg="abc" id="BM_Pyr"/>
+      <rproduct cfg="ABCDcb" id="Lys"/>
+      <rproduct cfg="a" id="CO2"/>
+    </reaction>
+    <reaction id="bs_oaa3b">
+      <reduct cfg="ABCD" id="BM_OAA"/>
+      <reduct cfg="abc" id="BM_Pyr"/>
+      <rproduct cfg="abcDCB" id="Lys"/>
+      <rproduct cfg="A" id="CO2"/>
+    </reaction>
+    <reaction id="bs_oaa3_aux">
+      <reduct cfg="ABCDEF" id="Lys"/>
+    </reaction>
+    <reaction id="bs_oaa4">
+      <reduct cfg="ABCD" id="BM_OAA"/>
+    </reaction>
+    <reaction id="bs_oaa5">
+      <reduct cfg="ABCD" id="BM_OAA"/>
+      <rproduct cfg="ABCD" id="Thr"/>
+    </reaction>
+    <reaction id="bs_oaa5_aux">
+      <reduct cfg="ABCD" id="Thr"/>
+    </reaction>
+    <reaction id="bs_oaa6">
+      <reduct cfg="ABCD" id="BM_OAA"/>
+      <reduct cfg="a" id="FTHF"/>
+      <rproduct cfg="ABCDa" id="Met"/>
+    </reaction>
+    <reaction id="bs_oaa6_aux">
+      <reduct cfg="ABCDE" id="Met"/>
+    </reaction>
+    <reaction id="bs_oaa7">
+      <reduct cfg="ABCD" id="BM_OAA"/>
+      <rproduct cfg="ABCD" id="Asn"/>
+    </reaction>
+    <reaction id="bs_oaa7_aux">
+      <reduct cfg="ABCD" id="Asn"/>
+    </reaction>
+    <reaction id="out_co2">
+      <reduct cfg="A" id="CO2"/>
+    </reaction>
+    <reaction id="out_Ac">
+      <reduct cfg="AB" id="AcCoA"/>
+    </reaction>
+    <reaction id="out_FTHF">
+      <reduct cfg="A" id="FTHF"/>
+    </reaction>
+  </reactionnetwork>
+  <constraints>
+    <net>
+      <textual>
+        fum_a-fum_b=0;
+        Glucupt_1+Glucupt_U=1;
+        bs_oaa3a-bs_oaa3b=0;
+        bs_pep3a-bs_pep3b=0;
+        bs_pep4a-bs_pep4b=0;
+        bs_DHAP=0.0068;
+        bs_accoa=0.1565;
+        bs_akg=0.0571;
+        bs_akg2=0.0111;
+        bs_akg3=0.0132;
+        bs_fru6P=0.0038;
+        bs_glc6P=0.0109;
+        bs_oaa=0.0947;
+        bs_oaa1_aux=0.0121;
+        bs_oaa2_aux=0.0146;
+        bs_oaa3_aux=0.0173;
+        bs_oaa5_aux=0.0128;
+        bs_oaa6_aux=0.0077;
+        bs_oaa7_aux=0.0121;
+        bs_pep=0.0381;
+        bs_pep3_aux=0.0093;
+        bs_pep4_aux=0.0069;
+        bs_pep5=0.0027;
+        bs_pga=0.0791;
+        bs_pga1_aux=0.0109;
+        bs_pga2_aux=0.0046;
+        bs_pga3_aux=0.0308;
+        bs_pyr=0.1501;
+        bs_pyr3_aux=0.0227;
+        bs_pyr4_aux=0.0213;
+        bs_rib5p=0.0476;
+        bs_rib5p1_aux=0.0048;
+        edd&gt;=0.0001;
+        gnd&gt;=0.0001;
+        mae&gt;=0.0001;
+        ppc&gt;=0.0001;
+        pyk&gt;=1;
+        zwf&gt;=0.0001
+      </textual>
+    </net>
+    <xch>
+    	<!--
+      <textual>
+        fum_a-fum_b=0;
+        akgdh = 0;
+        bs_accoa=0;
+        bs_akg=0;
+        bs_akg1= 0;
+        bs_akg4=0;
+        bs_e4p=0;
+        bs_oaa=0;
+        bs_oaa1=0;
+        bs_oaa2=0;
+
+      </textual>
+-->
+        <apply>
+          <eq/>
+          <ci>bs_oaa2</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_oaa3a</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_oaa3b</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_oaa5</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_oaa6</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_oaa7</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pep</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pep1</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pep2</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pep3a</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pep3b</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pep4a</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pep4b</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pep6</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pep7</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pga</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pga1</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pga2</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pga3</ci>
+          <cn>0.011939878627931</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pyr</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pyr1</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pyr2</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pyr3</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_pyr4</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_rib5p</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>bs_rib5p1</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>citsynth</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>edd</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>gnd</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>idh</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>mae</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>maldh</ci>
+          <cn>1.833784377346728</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>pdh</ci>
+          <cn>0.0333508830758309</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>pfk</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>pgi</ci>
+          <cn>3.038543862624892</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>pgk</ci>
+          <cn>64.4364611961784</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>pyk</ci>
+          <cn>0.0110805326655349</cn>
+        </apply>
+        <apply>
+          <eq/>
+          <ci>zwf</ci>
+          <cn>0</cn>
+        </apply>
+      </math>
+    </xch>
+  </constraints>
+  <configuration name="default" stationary="true">
+    <input pool="Gluc_U" type="isotopomer">
+      <label cfg="111111">1</label>
+      <label cfg="000000">0.</label>
+    </input>
+    <input pool="Gluc_1" type="isotopomer">
+      <label cfg="100000">1.</label>
+      <label cfg="000000">0.</label>
+    </input>
+    <measurement>
+      <model>
+        <labelingmeasurement>
+          <group id="ms_group_1" scale="auto"  >
+            <textual>Suc[1,2,3,4]#M1,2,3,4</textual>
+          </group>
+          <group id="ms_group_2" scale="auto"  >
+            <textual>ICit[1,2,3,4,5,6]#M0,1,2,3,4,5,6</textual>
+          </group>
+          <group id="ms_group_3" scale="auto"  >
+            <textual>PEP[1,2,3]#M0,1,2,3</textual>
+          </group>
+          <group id="ms_group_4" scale="auto"  >
+            <textual>PGA[1,2,3]#M0,1,2,3</textual>
+          </group>
+          <group id="ms_group_5" scale="auto"  >
+            <textual>FruBP[1,2,3,4,5,6]#M0,1,2,3,4,5,6</textual>
+          </group>
+          <group id="ms_group_6" scale="auto"  >
+            <textual>Glc6P[1,2,3,4,5,6]#M0,1,2,3,4,5,6</textual>
+          </group>
+          <group id="ms_group_7" scale="auto"  >
+            <textual>Fru6P[1,2,3,4,5,6]#M0,1,2,3,4,5,6</textual>
+          </group>
+          <group id="ms_group_8" scale="auto"  >
+            <textual>Rib5P[1,2,3,4,5]#M0,1,2,3,4,5</textual>
+          </group>
+          <group id="ms_group_9" scale="auto"  >
+            <textual>Gnt6P[1,2,3,4,5,6]#M0,1,2,3,4,5,6</textual>
+          </group>
+        </labelingmeasurement>
+        <fluxmeasurement>
+          <netflux id="fm_1">
+            <textual>out_Ac</textual>
+          </netflux>
+        </fluxmeasurement>
+      </model>
+      <data>
+        <datum id="fm_1" stddev="0.0001">0.213</datum>
+        <datum id="ms_group_1" stddev="0.01" weight="1">0.371605319</datum>
+        <datum id="ms_group_1" stddev="0.01" weight="2">0.360829749</datum>
+        <datum id="ms_group_1" stddev="0.01" weight="3">0.208425325</datum>
+        <datum id="ms_group_1" stddev="0.01" weight="4">0.059139607</datum>
+        <datum id="ms_group_2" stddev="0.02" weight="0">0.131864539419667</datum>
+        <datum id="ms_group_2" stddev="0.02" weight="1">0.225857638569</datum>
+        <datum id="ms_group_2" stddev="0.02" weight="2">0.256421170949333</datum>
+        <datum id="ms_group_2" stddev="0.02" weight="3">0.209230210478667</datum>
+        <datum id="ms_group_2" stddev="0.02" weight="4">0.116863585449667</datum>
+        <datum id="ms_group_2" stddev="0.02" weight="5">0.0457727744643333</datum>
+        <datum id="ms_group_2" stddev="0.02" weight="6">0.0139900806697867</datum>
+        <datum id="ms_group_3" stddev="0.01" weight="0">0.421359839367667</datum>
+        <datum id="ms_group_3" stddev="0.01" weight="1">0.358998301162333</datum>
+        <datum id="ms_group_3" stddev="0.01" weight="2">0.0348521859365667</datum>
+        <datum id="ms_group_3" stddev="0.01" weight="3">0.184789673534</datum>
+        <datum id="ms_group_4" stddev="0.01" weight="0">0.434335785072667</datum>
+        <datum id="ms_group_4" stddev="0.01" weight="1">0.352829683224667</datum>
+        <datum id="ms_group_4" stddev="0.01" weight="2">0.0323479804176</datum>
+        <datum id="ms_group_4" stddev="0.01" weight="3">0.180486551285333</datum>
+        <datum id="ms_group_5" stddev="0.01" weight="0">0.0738121029259333</datum>
+        <datum id="ms_group_5" stddev="0.01" weight="1">0.454450017158667</datum>
+        <datum id="ms_group_5" stddev="0.01" weight="2">0.160823529969333</datum>
+        <datum id="ms_group_5" stddev="0.01" weight="3">0.0944468077710667</datum>
+        <datum id="ms_group_5" stddev="0.01" weight="4">0.105281338489667</datum>
+        <datum id="ms_group_5" stddev="0.01" weight="5">0.0155016033633</datum>
+        <datum id="ms_group_5" stddev="0.01" weight="6">0.0956846003217333</datum>
+        <datum id="ms_group_6" stddev="0.01" weight="0">0.0160587173349</datum>
+        <datum id="ms_group_6" stddev="0.01" weight="1">0.673510772480667</datum>
+        <datum id="ms_group_6" stddev="0.01" weight="2">0.0930110047641</datum>
+        <datum id="ms_group_6" stddev="0.01" weight="3">0.0280359937297</datum>
+        <datum id="ms_group_6" stddev="0.01" weight="4">0.0397315614067667</datum>
+        <datum id="ms_group_6" stddev="0.01" weight="5">0.0145524520950667</datum>
+        <datum id="ms_group_6" stddev="0.01" weight="6">0.135099498189</datum>
+        <datum id="ms_group_7" stddev="0.01" weight="0">0.0235029951295</datum>
+        <datum id="ms_group_7" stddev="0.01" weight="1">0.624253565357667</datum>
+        <datum id="ms_group_7" stddev="0.01" weight="2">0.113068441282333</datum>
+        <datum id="ms_group_7" stddev="0.01" weight="3">0.0456605631765</datum>
+        <datum id="ms_group_7" stddev="0.01" weight="4">0.0516089447155667</datum>
+        <datum id="ms_group_7" stddev="0.01" weight="5">0.0185881765378333</datum>
+        <datum id="ms_group_7" stddev="0.01" weight="6">0.123317313800333</datum>
+        <datum id="ms_group_8" stddev="0.01" weight="0">0.341615670498667</datum>
+        <datum id="ms_group_8" stddev="0.01" weight="1">0.25454117519</datum>
+        <datum id="ms_group_8" stddev="0.01" weight="2">0.159027180368333</datum>
+        <datum id="ms_group_8" stddev="0.01" weight="3">0.113789577528667</datum>
+        <datum id="ms_group_8" stddev="0.01" weight="4">0.0615266612553333</datum>
+        <datum id="ms_group_8" stddev="0.01" weight="5">0.0694997351590667</datum>
+        <datum id="ms_group_9" stddev="0.01" weight="0">0.0249552273874</datum>
+        <datum id="ms_group_9" stddev="0.01" weight="1">0.672556163913</datum>
+        <datum id="ms_group_9" stddev="0.01" weight="2">0.0866890773125333</datum>
+        <datum id="ms_group_9" stddev="0.01" weight="3">0.0313987199704333</datum>
+        <datum id="ms_group_9" stddev="0.01" weight="4">0.0314691889898667</datum>
+        <datum id="ms_group_9" stddev="0.01" weight="5">0.0138168327362333</datum>
+        <datum id="ms_group_9" stddev="0.01" weight="6">0.139114789690333</datum>
+      </data>
+    </measurement>
+    <simulation method="cumomer" type="auto">
+      <variables>
+        <fluxvalue flux="Glucupt_1" type="net">0.7</fluxvalue>
+        <fluxvalue flux="pyk" type="net">1.4</fluxvalue>
+        <fluxvalue flux="zwf" type="net">0.2</fluxvalue>
+        <fluxvalue flux="gnd" type="net">0.15062</fluxvalue>
+        <fluxvalue flux="out_Ac" type="net">0.213</fluxvalue>
+        <fluxvalue flux="ald" type="xch">0.706269174199845</fluxvalue>
+        <fluxvalue flux="eno" type="xch">4.024166239612535</fluxvalue>
+        <fluxvalue flux="ta" type="xch">0.561202250629165</fluxvalue>
+        <fluxvalue flux="tk1" type="xch">0.199495252397791</fluxvalue>
+        <fluxvalue flux="tk2" type="xch">0.00212007520991334</fluxvalue>
+        <fluxvalue flux="fum_a" type="xch">0.65551402054824</fluxvalue>
+        <fluxvalue flux="ppc" type="xch">0.345482140070073</fluxvalue>
+      </variables>
+    </simulation>
+  </configuration>
+</fluxml>
